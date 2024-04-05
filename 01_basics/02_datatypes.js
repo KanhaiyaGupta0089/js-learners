@@ -2,7 +2,7 @@
 
 //alert(3+3)//gives error in js but not in browser because we are using nodejs , not browser
 
-//NUMBER=> range -> 2^53
+//NUMBER=> range -> 2^53 .
 
 //bigint //used for large data
 //string =>"" 
