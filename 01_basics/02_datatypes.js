@@ -4,7 +4,7 @@
 
 //NUMBER=> range -> 2^53
 
-//bigint
+//bigint //used for large data
 //string =>""
 //boolean -> true or false
 //null -> standalone values which means empty. 
