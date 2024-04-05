@@ -5,7 +5,7 @@
 //NUMBER=> range -> 2^53
 
 //bigint //used for large data
-//string =>""
+//string =>"" 
 //boolean -> true or false
 //null -> standalone values which means empty. 
 //undefined -> means variable is declared but not initialized then it give undefined.
