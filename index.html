@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Card page</title>
+</head>
+<body>
+    
+    <div id="card">
+        <div>
+        <img src="" alt="image1"  id="profile">
+        <h2 class="text" id="name"></h2>
+        <h2 class="text" id="follow">Followers : 200</h2>
+    </div>
+      <div class="bun">
+        <button id="btn">Visit</button>
+      </div>  
+    </div>
+    
+   
+    
+</body>
+<script>
+    
+    
+    const userName=prompt("Enter your user name")
+   
+    const requestUrl = 'https://api.github.com/users/'+userName
+    const xhr=new XMLHttpRequest();
+    xhr.open('GET',requestUrl);
+    xhr.onreadystatechange=function(){
+    
+        if(xhr.readyState==4){
+        const data=JSON.parse(this.responseText)
+        console.log(data);
+        
+        document.querySelector('#name').innerHTML="Name : "+data.name
+        document.querySelector('#follow').innerHTML="Follower : "+data.followers
+        const img=document.querySelector('#profile')
+        img.setAttribute("src",data.avatar_url)
+        const heading=document.createElement('h2');
+        // console.log(h2);
+        heading.className="text"
+        // console.log(h2);
+        heading.id='location'
+        // h2.innerText=data.twitter_username
+        const addText=document.createTextNode("Location: "+data.location)
+        heading.appendChild(addText)
+
+        document.getElementById('card').appendChild(heading)
+        console.log(heading.parentElement)
+
+        const btan=document.getElementById('btn');
+        btan.addEventListener('click',function(e){
+            
+            window.open(data.repos_url);
+        })
+        
+      
+        
+
+        }
+    }
+    
+    xhr.send()
+    
+    
+    
+    
+</script>
+</html
